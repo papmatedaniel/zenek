@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex; /* Flexbox a body számára */
+    flex-direction: column; /* Oszlopokba rendezés */
+    align-items: center; /* Középre igazítás */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.lyrics-container {
+    display: flex; /* Flexbox a szövegek elhelyezéséhez */
+    justify-content: center; /* Középre igazítás */
+    margin-top: 20px;
+}
+
+.lyrics {
+    border: 1px solid #ccc;
+    padding: 10px;
+    max-width: 40%; /* Csökkentett szélesség */
+    margin: 0 10px; /* Kisebb margó, hogy közelebb legyenek egymáshoz */
+    white-space: pre-wrap; /* Megőrzi a sortöréseket */
+}
