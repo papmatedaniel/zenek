@@ -6,10 +6,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh; /* Ezt lehet meghagyni, hogy lefedje a teljes magasságot */
-    overflow: auto; /* Hozzáadjuk, hogy ha több tartalom van, gördíthető legyen */
+    min-height: 100vh;
+    overflow-x: hidden;
 }
-
 
 nav ul {
     list-style: none;
@@ -19,10 +18,8 @@ nav ul {
 }
 
 nav ul li {
-    display: inline-block;
-    margin-right: 15px;
-    display: block; /* Ezt módosítottuk inline-block-ról block-ra */
-    margin-bottom: 15px; /* Hozzáadunk egy kis margót az elemek közé */
+    display: block;
+    margin-bottom: 15px;
 }
 
 nav ul li a {
@@ -41,8 +38,8 @@ nav ul li a:hover {
 
 .lyrics-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-start;
     max-width: 1200px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -52,7 +49,8 @@ nav ul li a:hover {
 }
 
 .lyrics {
-    width: 45%;
+    flex: 1 1 45%;
+    min-width: 300px; /* Minimum width for side-by-side alignment on larger screens */
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
@@ -61,6 +59,7 @@ nav ul li a:hover {
     overflow-wrap: break-word;
     font-size: 1.1em;
     line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 .lyrics h2 {
@@ -75,6 +74,18 @@ footer {
     text-align: center;
     color: #777;
     font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+    .lyrics-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .lyrics {
+        flex: 1 1 100%;
+        min-width: 100%;
+    }
 }
 
 img {
